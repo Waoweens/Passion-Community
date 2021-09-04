@@ -7,6 +7,8 @@
       <mat-list-item [routerLink]="['/home']" [routerLinkActive]="['active-nav']">Home</mat-list-item>
       <mat-list-item [routerLink]="['/about']" [routerLinkActive]="['active-nav']">About</mat-list-item>
       <mat-list-item [routerLink]="['/contact']" [routerLinkActive]="['active-nav']">Contact</mat-list-item>
+      <span mat-list-item></span>
+      <a mat-list-item href="https://github.com/Waoweens/Passion-Community" target="_blank"><img class="github-resize" src="/assets/passioncommunity/GitHub-Mark-Light-32px.png"><span>&nbsp;GitHub</span></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -22,6 +24,7 @@
           <button mat-button [routerLink]="['/about']" routerLinkActive="mat-flat-button mat-accent" [ngClass]="{hidden: (isHandset$ | async)}">About</button>
           <button mat-button [routerLink]="['/contact']" routerLinkActive="mat-flat-button mat-accent" [ngClass]="{hidden: (isHandset$ | async)}">Contact</button>
           <span class="move-right"></span>
+          <a mat-button href="https://github.com/Waoweens/Passion-Community" target="_blank" [ngClass]="{hidden: (isHandset$ | async)}"><img class="github-resize" src="/assets/passioncommunity/GitHub-Mark-32px.png"><span>&nbsp;GitHub</span></a>
       </mat-toolbar-row>
     </mat-toolbar>
     <!-- Add Content Here -->

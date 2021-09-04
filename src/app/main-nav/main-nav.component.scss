@@ -26,6 +26,16 @@
   width: 1.5em;
 }
 
+.github-resize {
+  width: 1.5em;
+  position: relative;
+  bottom: 2px;
+}
+
 .move-right {
   flex: 1 1 auto;
+}
+
+.active-nav {
+  background-color: #FFAB40 !important;
 }
