@@ -1,0 +1,30 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [ngClass]="{hidden: !(isHandset$ | async)}"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false" (click)="drawer.toggle()">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item [routerLink]="['/home']" [routerLinkActive]="['active-nav']">Home</mat-list-item>
+      <mat-list-item [routerLink]="['/about']" [routerLinkActive]="['active-nav']">About</mat-list-item>
+      <mat-list-item [routerLink]="['/contact']" [routerLinkActive]="['active-nav']">Contact</mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <img class="logo-resize" src="/assets/passioncommunity/logo.png"><span>{{title}}</span>
+        <span>&nbsp;&nbsp;</span>
+          <button mat-button [routerLink]="['/home']" routerLinkActive="mat-flat-button mat-accent" [ngClass]="{hidden: (isHandset$ | async)}">Home</button>
+          <button mat-button [routerLink]="['/about']" routerLinkActive="mat-flat-button mat-accent" [ngClass]="{hidden: (isHandset$ | async)}">About</button>
+          <button mat-button [routerLink]="['/contact']" routerLinkActive="mat-flat-button mat-accent" [ngClass]="{hidden: (isHandset$ | async)}">Contact</button>
+          <span class="move-right"></span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

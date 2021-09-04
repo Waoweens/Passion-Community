@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "passion-community": {
+      "hosting": {
+        "passion-community": [
+          "passion-community"
+        ]
+      }
+    }
+  }
+}
